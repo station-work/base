@@ -1,0 +1,30 @@
+<h1>Listing Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Web site</th>
+      <th>Image</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for companies <- @companies do %>
+    <tr>
+      <td><%= companies.name %></td>
+      <td><%= companies.web_site %></td>
+      <td><%= companies.image %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.companies_path(@conn, :show, companies) %></span>
+        <span><%= link "Edit", to: Routes.companies_path(@conn, :edit, companies) %></span>
+        <span><%= link "Delete", to: Routes.companies_path(@conn, :delete, companies), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Companies", to: Routes.companies_path(@conn, :new) %></span>

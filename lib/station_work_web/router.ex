@@ -33,10 +33,10 @@ defmodule StationWorkWeb.Router do
     get "/", PageController, :index
   end
  
-  scope "/devs", StationWorkWeb do
+  scope "/", StationWorkWeb do
     pipe_through [:browser, :protected]
 
-    get "/", PageController, :index
+    resources "/companies", CompaniesController
   end
 
 

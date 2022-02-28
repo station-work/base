@@ -1,0 +1,23 @@
+<h1>Show Companies</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @companies.name %>
+  </li>
+
+  <li>
+    <strong>Web site:</strong>
+    <%= @companies.web_site %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @companies.image %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.companies_path(@conn, :edit, @companies) %></span> |
+<span><%= link "Back", to: Routes.companies_path(@conn, :index) %></span>
